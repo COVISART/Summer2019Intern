@@ -21,7 +21,7 @@ public class CubeController : MonoBehaviour
     //    TargetObject.transform.localPosition = TargetPosition;
     //}
 
-    public void ChangePosition()
+    public void ChangeAll()
     {
         float x = Random.Range(-15, 15);
         float y = Random.Range(-6, 6);
@@ -36,8 +36,35 @@ public class CubeController : MonoBehaviour
         TargetRotation = new Quaternion(a, b, 0, 0);
         TargetPosition = new Vector3(x, y);
         TargetScale = new Vector3(scaleA, scaleB, scaleC);
+        
+    }
 
-        //CurrentPos = TargetPos;
+    public void ChangePosition()
+    {
+        float x = Random.Range(-15, 15);
+        float y = Random.Range(-6, 6);
+        
+        TargetPosition = new Vector3(x, y);
+
+    }
+
+    public void ChangeRotation()
+    {
+        float a = Random.Range(0, 360);
+        float b = Random.Range(0, 360);
+        
+        TargetRotation = new Quaternion(a, b, 0, 0);
+
+    }
+
+    public void ChangeScale()
+    {
+        float scaleA = Random.Range(0.5f, 3);
+        float scaleB = Random.Range(0.5f, 3);
+        float scaleC = Random.Range(0.5f, 3);
+
+        TargetScale = new Vector3(scaleA, scaleB, scaleC);
+
     }
 
     //public void ChangePosition(Transform TargetPos)
